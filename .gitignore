@@ -1,0 +1,13 @@
+.history
+config.json
+client.json
+temp.torrent
+.goreleaser.yml
+dist
+.idea
+info
+test
+*.exe
+*.zip
+*.log
+

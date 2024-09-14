@@ -1,0 +1,22 @@
+# config.yaml
+postgres:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "test123456"
+  data_dir: "C:/Users/MissMirai/Desktop/backup" # 删除备份时，会检测删除该目录下的文件
+  database: "cmsdb"
+backup:
+  only_remains_days: 148  # 保留备份的小时数，0 为不删除
+  check_removes_interval: 24  # 检查删除备份的小时数，0 为不检查，即不删除
+  full_backup_dir: "C:/Users/MissMirai/Desktop/backup/full_backup" # 全量备份的目录
+  full_backup_interval: 148  # 全量备份的小时间隔，0 为不备份
+  wal_archive_dir: "C:/Users/MissMirai/Desktop/backup/archive_dir" # archive_command 填写的
+  wal_archive_backup_dir: "C:/Users/MissMirai/Desktop/backup/wal_archive"
+  clean_wal_archive_dir: true  # 是否清理 wal_archive_dir 目录
+  wal_archive_interval: 24  # 增量备份的小时间隔，0 为不备份
+  pg_basebackup: "C:/Program Files/PostgreSQL/16/bin/pg_basebackup.exe"  # pg_basebackup 的路径
+  pg_dump: "C:/Program Files/PostgreSQL/16/bin/pg_dump.exe"  # pg_dump 的路径
+  table_backup_dir: "C:/Users/MissMirai/Desktop/backup/table_backup"  # 表备份的目录
+  tables: [ ]  # 为空时，备份整个数据库
+  table_backup_interval: 24  # 表备份的小时间隔，0 为不备份
